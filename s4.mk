@@ -75,9 +75,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd \
     ro.telephony.ril_class=HTCQualcommRIL \
     ro.telephony.ril.v3=skipradiooff
-<<<<<<< HEAD
-=======
+
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/s4-common/s4-common-vendor.mk)
->>>>>>> 76e5ce2f089772f455b15b8e3205690761be2c39
