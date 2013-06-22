@@ -45,9 +45,6 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    libloc_adapter \
-    libloc_eng \
-    libgps.utils \
     gps.msm8960
 
 # Recovery
@@ -58,13 +55,17 @@ PRODUCT_PACKAGES += \
     offmode_charging \
     detect_key
 
+# Audio config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
+
 # Thermal config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermald.conf:system/etc/thermald.conf
 
 # GPS config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
+    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf
 
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -74,3 +75,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd \
     ro.telephony.ril_class=HTCQualcommRIL \
     ro.telephony.ril.v3=skipradiooff
+<<<<<<< HEAD
+=======
+
+# call the proprietary setup
+$(call inherit-product-if-exists, vendor/htc/s4-common/s4-common-vendor.mk)
+>>>>>>> 76e5ce2f089772f455b15b8e3205690761be2c39
